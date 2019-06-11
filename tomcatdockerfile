@@ -1,0 +1,21 @@
+from centos
+maintainer
+label owner ="" \ version=""
+
+workdir /
+arg user name=root
+user $(user name)
+env container_name democontainer
+
+run yum install java
+run mkdir /opt/tomcat
+
+
+workdir /opt/tomcat
+add http tomcat tra file
+run tar -xvzf
+expose 8080
+
+workdir /opt/tomcat/bin
+entrypoint ["./catalina.sh"]
+cmd["run"]
